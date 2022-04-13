@@ -23,7 +23,7 @@
   <name>Messenger</name>
   <description>Messenger</description>
   <properties>
-    <java.version>11</java.version>
+    <java.version>17</java.version>
   </properties>
   <dependencies>
     <dependency>
@@ -102,6 +102,16 @@
         </plugin>
       </plugins>
     </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>16</source>
+          <target>16</target>
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
   <repositories>
     <repository>
