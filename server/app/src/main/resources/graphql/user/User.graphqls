@@ -1,0 +1,62 @@
+extend type Query {
+    getProfile:UserProfile
+}
+
+extend type Mutation {
+    updateAvatar(path:String!):String
+    updateProfile(profileUpdatePayload:ProfilePayload!):UserProfile
+}
+
+type UserProfile implements BaseEntity{
+    id:String
+    firstname:String
+    lastname:String
+    age:Int
+    gender:EGender
+    birthday:String
+    address:String
+    about:String
+    createAt:String
+    updateAt:String
+    account:Account
+}
+
+type Account{
+    username:String
+    authorities:[String]
+    emailList:[EmailAddress]
+    phoneNumberList:[PhoneNumber]
+    accountState:EAccountState
+    isActive:Boolean
+}
+
+type EmailAddress{
+    email:String
+    isHidden:Boolean
+    isPrimary:Boolean
+    isActive:Boolean
+}
+
+type PhoneNumber{
+    phoneNumber:String
+    isHidden:Boolean
+    isPrimary:Boolean
+    isActive:Boolean
+}
+
+enum EAccountState{
+    online,offline,block
+}
+enum EGender{
+    Male,Female
+}
+
+input ProfilePayload{
+    firstname:String!
+    lastname:String!
+    age:Int
+    gender:EGender
+    birthday:String
+    address:String
+    about:String
+}

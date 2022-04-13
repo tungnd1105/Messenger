@@ -1,0 +1,10 @@
+type Query{
+    mutation:Mutation
+}
+
+type Mutation{}
+
+interface BaseEntity{
+    createAt:String
+    updateAt:String
+}

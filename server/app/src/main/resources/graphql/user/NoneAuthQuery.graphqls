@@ -1,0 +1,37 @@
+extend type Query {
+   refreshToken:Token
+}
+
+extend type Mutation {
+    register(registerPayload:RegisterPayload!):A
+    login(loginPayload:LoginPayload!):AuthPayload
+}
+
+type AuthPayload{
+    username:String
+    authorities:[String]
+    token:Token
+}
+
+type Token{
+    accessToken:String
+    refreshToken:String
+}
+
+input LoginPayload{
+    username:String
+    password:String
+}
+
+input RegisterPayload {
+    firstname:String!
+    lastname:String!
+    username:String!
+    password:String!
+    email:String!
+    phoneNumber:String!
+}
+
+type A {
+    messages:String
+}
