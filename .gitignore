@@ -1,7 +1,7 @@
 HELP.md
 
-client/node_modules/*
-client/package-lock.json
+Messenger-Web/node_modules/*
+Messenger-Web/package-lock.json
 
 target/
 !.mvn/wrapper/maven-wrapper.jar
