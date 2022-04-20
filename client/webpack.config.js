@@ -29,6 +29,11 @@ module.exports = {
   },
   resolve: {
     modules: ['node_modules', path.resolve(__dirname, "src")],
+    alias:{
+      "@components": path.resolve(__dirname, "src/components"),
+      "@features": path.resolve(__dirname, "src/features"),
+      "@assets": path.resolve(__dirname, "src/assets"),
+    },
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
   },
   optimization: {

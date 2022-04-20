@@ -10,6 +10,11 @@
     "moduleResolution": "node",
     "esModuleInterop": true,
     "jsx": "preserve",
+    "paths": {
+      "@assets/*": ["src/assets/*"],
+      "@features/*": ["src/features/*"],
+      "@components/*": ["src/components/*"],
+    }
   },
   "include": ["src", "file-loader.d.ts"],
   "exclude": ["node_modules"]
