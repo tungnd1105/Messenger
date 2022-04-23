@@ -30,11 +30,12 @@ module.exports = {
   resolve: {
     modules: ['node_modules', path.resolve(__dirname, "src")],
     alias:{
-      "@assets": path.resolve(__dirname, "src/assets"),
-      "@components": path.resolve(__dirname, "src/components"),
       "@pages": path.resolve(__dirname, "src/pages"),
+      "@assets": path.resolve(__dirname, "src/assets"),
+      "@router": path.resolve(__dirname, "src/router"),
+      "@services": path.resolve(__dirname, "src/services"),
       "@features": path.resolve(__dirname, "src/features"),
-      "@app": path.resolve(__dirname, "src/app"),
+      "@components": path.resolve(__dirname, "src/components"),
     },
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
   },

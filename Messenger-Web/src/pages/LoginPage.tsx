@@ -4,9 +4,16 @@ import {loginStyles} from "@assets/style/login.style";
 import pathImgBanner from "@assets/images/Online world-pana.svg"
 import {Box, Button, Card, Container, Divider, Grid, Stack, Typography} from "@mui/material";
 import {LoginForm} from "@features/login/LoginForm";
+import {Navigate} from "react-router-dom";
 
 class LoginPage extends Component {
+
   render() {
+
+    if (localStorage.getItem("accessToken")){
+      return <Navigate to={'/'}/>
+    }
+
     return (
       <Container disableGutters fixed maxWidth="xl" sx={loginStyles.container}>
         <Stack sx={loginStyles.stack}>
