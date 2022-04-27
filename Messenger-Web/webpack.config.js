@@ -29,15 +29,12 @@ module.exports = {
   },
   resolve: {
     modules: ['node_modules', path.resolve(__dirname, "src")],
-    alias:{
-      "@pages": path.resolve(__dirname, "src/pages"),
-      "@assets": path.resolve(__dirname, "src/assets"),
-      "@router": path.resolve(__dirname, "src/router"),
-      "@services": path.resolve(__dirname, "src/services"),
-      "@features": path.resolve(__dirname, "src/features"),
-      "@components": path.resolve(__dirname, "src/components"),
-    },
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
+    alias:{
+      "@assets": path.resolve(__dirname, "assets"),
+      "@views": path.resolve(__dirname, "src/views"),
+      "@app-mui": path.resolve(__dirname, "src/mui"),
+    }
   },
   optimization: {
     splitChunks: { chunks: 'all'},

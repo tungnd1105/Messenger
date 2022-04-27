@@ -11,12 +11,9 @@
     "esModuleInterop": true,
     "jsx": "preserve",
     "paths": {
-      "@assets/*": ["src/assets/*"],
-      "@pages/*": ["src/pages/*"],
-      "@features/*": ["src/features/*"],
-      "@services/*": ["src/services/*"],
-      "@router/*": ["src/router/*"],
-      "@components/*": ["src/components/*"],
+      "@assets/*": ["assets/*"],
+      "@views/*": ["src/views/*"],
+      "@app-mui/*": ["src/mui/*"],
     }
   },
   "include": ["src", "file-loader.d.ts"],

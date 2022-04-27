@@ -1,5 +1,5 @@
 import {createTheme} from "@mui/material";
-import {amber, green, grey, lightBlue, red} from "@mui/material/colors";
+import {amber, deepPurple, green, grey, lightBlue, red} from "@mui/material/colors";
 
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
@@ -12,9 +12,9 @@ export const Theme = createTheme({
   },
   palette: {
     primary: {
-      main: lightBlue["A700"],
-      light: lightBlue[500],
-      dark: lightBlue[900]
+      main: deepPurple[900],
+      light: deepPurple[500],
+      dark: deepPurple[900]
     },
     success: {
       main: green[600],
