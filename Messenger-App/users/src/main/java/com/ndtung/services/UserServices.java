@@ -24,17 +24,17 @@ public class UserServices {
   private final UserProfileRepo userProfileRepo;
 
   @Autowired
-  public UserServices(UserProfileRepo userProfileRepo){
+  public UserServices(UserProfileRepo userProfileRepo) {
     this.userProfileRepo = userProfileRepo;
   }
 
-  public Mono<UserProfile> getProfile(){
+  public Mono<UserProfile> getProfile() {
     return ReactiveSecurityContextHolder.getContext()
       .flatMap(securityContext -> Mono.just((UserProfile) securityContext.getAuthentication().getPrincipal()));
   }
 
 
-  public Mono<String> updateAvatar(String path){
+  public Mono<String> updateAvatar(String path) {
     return ReactiveSecurityContextHolder.getContext()
       .flatMap(securityContext -> Mono.just((UserProfile) securityContext.getAuthentication().getPrincipal()))
       .flatMap(userProfile -> {
@@ -44,21 +44,21 @@ public class UserServices {
       });
   }
 
-  public Mono<UserProfile> updateProfile(ProfileUpdatePayload profileUpdatePayload){
-   return ReactiveSecurityContextHolder.getContext()
-     .flatMap(securityContext -> Mono.just((UserProfile) securityContext.getAuthentication().getPrincipal()))
-     .flatMap(userProfile -> {
-       DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
-       userProfile.setFirstname(profileUpdatePayload.getFirstname());
-       userProfile.setLastname(profileUpdatePayload.getLastname());
-       userProfile.setBirthday(LocalDate.parse(profileUpdatePayload.getBirthday(),formatter));
-       userProfile.setGender(profileUpdatePayload.getGender());
-       userProfile.setAge(profileUpdatePayload.getAge());
-       userProfile.setAddress(profileUpdatePayload.getAddress());
-       userProfile.setAbout(profileUpdatePayload.getAbout());
-       userProfile.setUpdateAt(ZonedDateTime.now(ZoneId.systemDefault()).toString());
-       return userProfileRepo.save(userProfile);
-     });
+  public Mono<UserProfile> updateProfile(ProfileUpdatePayload profileUpdatePayload) {
+    return ReactiveSecurityContextHolder.getContext()
+      .flatMap(securityContext -> Mono.just((UserProfile) securityContext.getAuthentication().getPrincipal()))
+      .flatMap(userProfile -> {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
+        userProfile.setFirstname(profileUpdatePayload.getFirstname());
+        userProfile.setLastname(profileUpdatePayload.getLastname());
+        userProfile.setBirthday(LocalDate.parse(profileUpdatePayload.getBirthday(), formatter));
+        userProfile.setGender(profileUpdatePayload.getGender());
+        userProfile.setAge(profileUpdatePayload.getAge());
+        userProfile.setAddress(profileUpdatePayload.getAddress());
+        userProfile.setAbout(profileUpdatePayload.getAbout());
+        userProfile.setUpdateAt(ZonedDateTime.now(ZoneId.systemDefault()).toString());
+        return userProfileRepo.save(userProfile);
+      });
   }
 
 }

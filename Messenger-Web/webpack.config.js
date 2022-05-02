@@ -30,11 +30,10 @@ module.exports = {
   resolve: {
     modules: ['node_modules', path.resolve(__dirname, "src")],
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
-    alias:{
-      "@assets": path.resolve(__dirname, "assets"),
-      "@views": path.resolve(__dirname, "src/views"),
-      "@app-mui": path.resolve(__dirname, "src/mui"),
-    }
+    alias: {
+      "@assets": path.resolve(__dirname, "src/assets"),
+      '@app-mui': path.resolve(__dirname, 'src/mui'),
+    },
   },
   optimization: {
     splitChunks: { chunks: 'all'},
