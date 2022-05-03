@@ -5,7 +5,12 @@ import logoPrimary from "@assets/images/logo-primary.png"
 import {Box, BoxProps, Stack, Typography} from "@mui/material";
 import {MuiLogoProps} from "@app-mui/common/props/MuiLogoProps";
 
-export const MuiLogo:React.FunctionComponent = (props?: BoxProps, isDefault?: Boolean) => {
+interface LogoProps extends BoxProps {
+  isDefault: boolean
+}
+
+export const MuiLogo:React.FunctionComponent<LogoProps> = (props?: LogoProps) => {
+  const {isDefault} = props;
   return (
     <Stack {...MuiLogoProps.stack}>
       <Box component="img" src={isDefault ? logoPrimary : logoWhite} {...MuiLogoProps.icon}/>

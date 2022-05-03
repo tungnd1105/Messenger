@@ -15,7 +15,7 @@ class MuiLogin extends Component {
             <Card {...MuiLoginProps.card}>
               <Grid {...MuiLoginProps.gird}>
                 <Stack {...MuiLoginFormProps.stack}>
-                  <MuiLogo/>
+                  <MuiLogo isDefault={true}/>
                   <Divider {...MuiLoginFormProps.divider}>Sign in to Messenger</Divider>
                   <MuiLoginForm/>
                   <Divider {...MuiLoginFormProps.divider}> or </Divider>

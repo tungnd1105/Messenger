@@ -1,5 +1,5 @@
 import {createTheme} from "@mui/material";
-import {amber, deepPurple, green, grey, lightBlue, red} from "@mui/material/colors";
+import {amber, deepPurple, green, grey, red} from "@mui/material/colors";
 
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';

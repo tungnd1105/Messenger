@@ -33,6 +33,7 @@ module.exports = {
     alias: {
       "@assets": path.resolve(__dirname, "src/assets"),
       '@app-mui': path.resolve(__dirname, 'src/mui'),
+      "@app": path.resolve(__dirname, "src/app"),
     },
   },
   optimization: {

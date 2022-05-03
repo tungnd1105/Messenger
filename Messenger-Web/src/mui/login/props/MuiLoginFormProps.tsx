@@ -1,6 +1,7 @@
-import {CSSProperties} from "react";
+import React, {CSSProperties} from "react";
 import {Theme} from "@app-mui/color/Theme";
-import {ButtonProps, DividerProps, StackProps, TextFieldProps, TypographyProps} from "@mui/material";
+import {AiFillEye, AiFillEyeInvisible} from "react-icons/ai";
+import {ButtonProps, DividerProps, IconButton, StackProps, TextFieldProps, TypographyProps} from "@mui/material";
 
 export const MuiLoginFormProps = {
 
@@ -10,7 +11,10 @@ export const MuiLoginFormProps = {
   } as CSSProperties,
 
   typography: {
-    noWrap: true, fontSize: '16px', color: 'secondary'
+    noWrap: true,
+    fontSize: '16px',
+    color: 'secondary',
+    textAlign: 'center',
   } as TypographyProps,
 
   stack: {
@@ -42,16 +46,28 @@ export const MuiLoginFormProps = {
     sx: {marginBottom: Theme.spacing(2)},
   } as TextFieldProps,
 
-  passwordField: {
-    size: 'small',
-    type: 'password',
-    fullWidth: true,
-    name: 'password',
-    label: 'Password',
-    variant: 'outlined',
-    autoComplete: 'current-password',
-    sx: {marginBottom: Theme.spacing(2)},
-  } as TextFieldProps,
+  passwordField: () => {
+    const [showPassword, setShowPassword] = React.useState(false);
+    return {
+      size: 'small',
+      type: showPassword? 'text' : 'password',
+      fullWidth: true,
+      name: 'password',
+      label: 'Password',
+      variant: 'outlined',
+      autoComplete: 'current-password',
+      sx: {marginBottom: Theme.spacing(2)},
+      InputProps:{
+        endAdornment: showPassword ?
+          <IconButton color={'secondary'} onClick={() => setShowPassword(!showPassword)}>
+            <AiFillEye size={20}/>
+          </IconButton> :
+          <IconButton color={'secondary'} onClick={() => setShowPassword(!showPassword)}>
+            <AiFillEyeInvisible size={20}/>
+          </IconButton>
+      }
+    } as TextFieldProps
+  },
 
   btnSignUp: {
     size: "small",

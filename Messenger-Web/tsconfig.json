@@ -12,7 +12,8 @@
     "jsx": "preserve",
     "paths": {
       "@app-mui/*": ["src/mui/*"],
-      "@assets/*": ["src/assets/*"]
+      "@assets/*": ["src/assets/*"],
+      "@app/*": ["src/app/*"]
     }
   },
   "include": ["src", "file-loader.d.ts"],
