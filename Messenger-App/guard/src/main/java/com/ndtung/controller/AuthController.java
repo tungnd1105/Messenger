@@ -49,6 +49,7 @@ public class AuthController {
 
   @QueryMapping(value = "refreshToken")
   public Mono<TokenPayload> refreshToken(ServerWebExchange serverWebExchange){
+    System.out.println(serverWebExchange);
     return authServices.refreshToken(serverWebExchange);
   }
 

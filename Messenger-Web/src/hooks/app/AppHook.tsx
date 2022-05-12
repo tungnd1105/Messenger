@@ -7,11 +7,11 @@ export const useLayoutHook = () => {
   const {data: {appLocalState}} = useQuery(app_gql)
 
   const toggleDrawer = useCallback(() => {
-    AppLocalStateVar({...appLocalState, isDrawerOpen: !appLocalState.isDrawerOpen})
-  }, [appLocalState.isDrawerOpen])
+    AppLocalStateVar({...appLocalState, isDrawerMini: !appLocalState.isDrawerMini})
+  }, [appLocalState.isDrawerMini])
 
   return {
     toggleDrawer,
-    isDrawerOpen: appLocalState.isDrawerOpen
+    isDrawerMini: appLocalState.isDrawerMini
   }
 }

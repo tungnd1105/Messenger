@@ -1,11 +1,11 @@
 import {makeVar} from "@apollo/client";
 
 export interface AppLocalState {
-  isDrawerOpen: boolean;
+  isDrawerMini: boolean;
 }
 
 const initialState: AppLocalState = {
-  isDrawerOpen: true
+  isDrawerMini: false
 }
 
 export const AppLocalStateVar = makeVar<AppLocalState>(initialState);

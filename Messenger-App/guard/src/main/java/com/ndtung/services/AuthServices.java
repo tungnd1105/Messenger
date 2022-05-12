@@ -75,6 +75,7 @@ public class AuthServices {
   }
 
   public Mono<AuthPayload> generateToken(Authentication authentication) {
+    System.out.println(authentication.getPrincipal());
     return Mono.just(JWT.create()
       .withSubject(authentication.getName())
       .withClaim("authorities",
@@ -84,7 +85,7 @@ public class AuthServices {
       .sign(Algorithm.HMAC256(tokenSecret.getBytes()))
     ).flatMap(accessToken -> Mono.just(JWT.create()
         .withSubject(authentication.getName())
-        .withExpiresAt(new Date(System.currentTimeMillis() + 60 * 5 * 1000))
+        .withExpiresAt(new Date(System.currentTimeMillis() + 60 * 50 * 10000))
         .sign(Algorithm.HMAC256(tokenSecret.getBytes()))
       ).flatMap(refreshToken -> Mono.just(
           new AuthPayload(

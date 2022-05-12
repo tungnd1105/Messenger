@@ -1,13 +1,13 @@
 import React from "react";
 import {Formik} from "formik";
-import {useLoginHook} from "@hooks/login/LoginHook";
+import {useLogin} from "@hooks/login/LoginHook";
 import {Button, TextField, Typography} from "@mui/material";
 import {LoginFormikProps} from "@app-mui/login/props/LoginFormikProps";
 import {MuiLoginFormProps} from "@app-mui/login/props/MuiLoginFormProps";
 
 export const MuiLoginForm: React.FunctionComponent = () => {
 
-  const {handleLogin,error} = useLoginHook()
+  const {handleLogin, error} = useLogin()
 
   return (
     <Formik onSubmit={data => handleLogin(data)} {...LoginFormikProps()}>

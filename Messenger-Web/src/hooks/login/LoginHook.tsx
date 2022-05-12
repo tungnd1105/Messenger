@@ -1,11 +1,11 @@
 import {useCallback} from "react";
 import {useMutation} from "@apollo/client";
-import {login_gql} from "@hooks/login/LoginGraphql";
 import {history} from "@config/router/BrowserRouter";
+import {mutationLogin} from "@hooks/login/LoginGraphql";
 import {LoginPayload} from "@hooks/login/interfaces/LoginPayload";
 
-export const useLoginHook = () => {
-  const [login, {loading, data, error}] = useMutation(login_gql)
+export const useLogin = () => {
+  const [login, {loading, data, error}] = useMutation(mutationLogin);
 
   const handleLogin = useCallback((payload: LoginPayload) => {
     login({
@@ -20,5 +20,5 @@ export const useLoginHook = () => {
     }).catch(errors => console.log(errors))
   }, [])
 
-  return { handleLogin,data,loading,error }
+  return {handleLogin, data, loading, error}
 }

@@ -1,5 +1,7 @@
 import {AppBarProps, IconButtonProps, StackProps} from "@mui/material";
 
+export const headerHeight = '64px';
+
 export const MuiHeaderProps = {
 
   stack:{

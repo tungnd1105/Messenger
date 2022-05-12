@@ -16,6 +16,7 @@ type UserProfile implements BaseEntity{
     birthday:String
     address:String
     about:String
+    pathAvatar:String
     createAt:String
     updateAt:String
     account:Account
